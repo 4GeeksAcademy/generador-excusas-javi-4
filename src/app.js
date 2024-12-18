@@ -6,10 +6,6 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/img-excusas.jpg";
 import "./assets/img/4geeks.ico";
 
-//window.onload = function() {
-//write your code here
-//  console.log("Hello Rigo from the console!");
-//};
 // Algoritnmo de excusas
 let quien = [
   "Mi perro",
@@ -64,34 +60,23 @@ let consecuencia = [
 ];
 
 // Función para obtener la frase aleatoria
-function fraseAleatoria(arr) {
+function obtenerFraseAleatoria(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
 // Función para generar la excusa
 function excusa() {
-  let parte1 = fraseAleatoria(quien);
-  let parte2 = fraseAleatoria(que);
-  let parte3 = fraseAleatoria(como);
-  let parte4 = fraseAleatoria(consecuencia);
-  var excusa = "";
-
-  //document.querySelector("#excusa").innerHTML = `${parte1} +' '+ ${parte2} +' '+ ${parte3} +' '+ ${parte4}`;
+  let parte1 = obtenerFraseAleatoria(quien);
+  let parte2 = obtenerFraseAleatoria(que);
+  let parte3 = obtenerFraseAleatoria(como);
+  let parte4 = obtenerFraseAleatoria(consecuencia);
+  let excusa = parte1 + " " + parte2 + " " + parte3 + " " + parte4;
+  document.getElementById("excusa").innerHTML = excusa;
 }
 
 // Ejecutar y mostrar la excusa
 console.log(excusa());
 
 window.onload = function() {
-  //write your code here
-  excusa =
-    quien[Math.floor(Math.random() * quien.length)] +
-    " " +
-    que[Math.floor(Math.random() * que.length)] +
-    " " +
-    como[Math.floor(Math.random() * como.length)] +
-    " " +
-    consecuencia[Math.floor(Math.random() * consecuencia.length)];
-
-  document.getElementById("excusa").innerHTML = excusa;
+  excusa()
 };
